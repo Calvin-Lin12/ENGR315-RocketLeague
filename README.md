@@ -2,7 +2,7 @@
 Project for Rocket League data
 
 ## Team Name and Names of the Contributors (sub-task-1)
-Objective and Motivation: (sub-task-2)
+## Objective and Motivation: (sub-task-2)
 Specify Dataset and provide details
 Specify the questions that you are asking (with the form of the expected answers) and the potential benefits that one would have.
 ## Introduction/Context of project: 
@@ -15,7 +15,7 @@ Add any screenshot that you feel is necessary to show the project's complexity, 
 Just have the title as a placeholder to be populated later
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
-Actions that need to be completed:
+## Actions that need to be completed:
 Just have the title as a placeholder to be populated later
 List all the actions that need to be completed (a checklist). Think about this as a guide to who wants to duplicate the project.
 Mention the issues that the group is facing for each action, if any.
