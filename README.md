@@ -1,9 +1,7 @@
 # ENGR315-RocketLeague
 Project for Rocket League data
 ## Team Name and Names of the Contributors (sub-task-1)
-Calvin Lin
-Daniel Teach
-Logan McElwain
+Calvin Lin, Daniel Teach, Logan McElwain
 ## Objective and Motivation: (sub-task-2)
 Specify Dataset and provide details
 Specify the questions that you are asking (with the form of the expected answers) and the potential benefits that one would have.
