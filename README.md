@@ -18,7 +18,7 @@
 3. **How effectively can we cluster unlabelled failed attempts away from successful trick categories based solely on movement and ball metric features?**
    * *Expected Answer / Analysis:* Tracking speed over time will show distinct motion phases (like accelerating vs. steady trajectories), highlighting that power shots exhibit higher peak acceleration compared to aerials and flicks[cite: 6].
 ## Introduction/Context of project: 
-This section isn’t mandatory, but if you feel like some content needs to be introduced in order to understand the methods and questions, please add all the necessary details here.
+Rocket League is a video game where the user controls a car across a variety of game modes. Most of the game modes in Rocket League are similar to soccer where competing teams try to score on the opponents net. Since the game was released in 2015, players have developed a variety of popular in game mechanics. We will be looking at the inputs players make when attempting these mechanics to answer our questions.
 ## Implementation Details: (sub-task-3 and sub-task-4)
 ### Methods, Metrics, Tools, and Plots:
 * **Metrics to Calculate:** Maximum ball velocity, initial/average player speed, speed distributions, and speed over time intervals.
