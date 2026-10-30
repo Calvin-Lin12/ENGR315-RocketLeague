@@ -30,16 +30,16 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Separate graphs: One for jump timing and one for boost timing.
  
 * For Q2. Histogram
-  *X-axis: Action sequence (Jump → Boost, Jump → Dodge, Jump → Boost → Dodge, etc.).
-  *Y-axis: Frequency of occurrence.
-  *Bar colors/label: Different players or skillshot categories.
-  *Chi-square test: observed graph vs. expected counts graph
+  * X-axis: Action sequence (Jump → Boost, Jump → Dodge, Jump → Boost → Dodge, etc.).
+  * Y-axis: Frequency of occurrence.
+  * Bar colors/label: Different players or skillshot categories.
+  * Chi-square test: observed graph vs. expected counts graph
 
 * For Q3. Scatter plot
-  *X-axis: First principal component (variable with the most difference in dataset).
-  *Y-axis: Second principal component (second most difference in dataset).
-  *Colors: Different K-means clusters.
-  *Markers: Distinguish successful and failed attempts after clustering.
+  * X-axis: First principal component (variable with the most difference in dataset).
+  * Y-axis: Second principal component (second most difference in dataset).
+  * Colors: Different K-means clusters.
+  * Markers: Distinguish successful and failed attempts after clustering.
 ## Results (Answers to the Questions): (sub-task-6)
 Just have the title as a placeholder to be populated later
 ## Conclusions: (sub-task-7)
