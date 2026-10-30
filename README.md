@@ -18,16 +18,16 @@
 3. **How effectively can we cluster unlabelled failed attempts away from successful trick categories based solely on movement and ball metric features?**
    * *Expected Answer / Analysis:* We plan to use a clustering sort of K-means, which will be based on player movement and ball metrics, including ball velocity, player velocity, acceleration, etc. We will examine whether failed attempts form distinct clusters from successful skillshot categories. Then use silhouette scores and compare the resulting clusters against the known success/failure categories to see if there's a significant difference between the shots.
 ## Introduction/Context of project: 
-Rocket League is a video game where the user controls a car across a variety of game modes. Most of the game modes in Rocket League are similar to soccer, where competing teams try to score on the opponent's net. Since the game was released in 2015, players have developed a variety of popular in-game mechanics. We will be looking at the inputs players make when attempting these mechanics to answer our questions.
+Rocket League is a video game where the user controls a car across a variety of game modes. Most Rocket League game modes are similar to soccer, where competing teams try to score on the opponent's net. Since the game was released in 2015, players have developed a variety of popular in-game mechanics. We will be looking at the inputs players make when attempting these mechanics to answer our questions.
 ## Implementation Details: (sub-task-3 and sub-task-4)
 ### Methods, Metrics, Tools, and Plots:
-* **Metrics to Calculate:** Maximum ball velocity, initial/average player speed, speed distributions, and speed over time intervals.
+* **Metrics to Calculate:** Maximum ball velocity, initial/average player speed, speed distributions, duration of shot, jump, boost, acceleration, speed over time intervals, etc. (All variables in the dataset are going to be used)
 * **Tools / Python Packages:** Python pandas, NumPy, and Matplotlib/Seaborn for data manipulation, statistical binning, chi-square analysis, K-means, silhouette scores, and time-series plotting.
 * **Planned Visualizations:**
 * For Q1. Box plot
   * X-axis: Skillshot category (Musty, Flip Reset, Aerial, etc.).
   * Y-axis: Input timing (seconds).
-  * Separate graphs: One for jump timing and one for boost timing.
+  * Separate graphs: One for jump timing and one for boost timing, etc.
  
 * For Q2. Histogram
   * X-axis: Action sequence (Jump → Boost, Jump → Dodge, Jump → Boost → Dodge, etc.).
