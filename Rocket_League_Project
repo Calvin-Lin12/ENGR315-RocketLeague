@@ -37,6 +37,23 @@ def load_Data(path):
 
     return dataframe
 
+## Types of shots made in the game
+def shotType(dataframe):
+    """
+    :param dataframe: Data of Rocket League Data
+    :return: Dataframes for the following skillshot: noise, ceiling shot, power shot,
+    air dribble, front flick, & musty flick
+    """
+    # Dataframes for each shot category
+    frame_Noise = dataframe[dataframe['SequenceLabel'] == -1]
+    frame_Ceiling = dataframe[dataframe['SequenceLabel'] == 1]
+    frame_Power = dataframe[dataframe['SequenceLabel'] == 2]
+    frame_Wave = dataframe[dataframe['SequenceLabel'] == 3]
+    frame_Dribble = dataframe[dataframe['SequenceLabel'] == 5]
+    frame_Fflick = dataframe[dataframe['SequenceLabel'] == 6]
+    frame_Mflick = dataframe[dataframe['SequenceLabel'] == 7]
+
+    return frame_Noise, frame_Ceiling, frame_Power, frame_Wave, frame_Dribble, frame_Fflick, frame_Mflick
 ##
 data = dataName("RL_data")
 load = load_Data(data)
