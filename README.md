@@ -41,7 +41,15 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Colors: Different K-means clusters.
   * Markers: Distinguish successful and failed attempts after clustering.
 ## Results (Answers to the Questions): (sub-task-6)
-Just have the title as a placeholder to be populated later
+
+
+
+
+<img width="1000" height="600" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
+<img width="1000" height="600" alt="Boost Time By Skillshot Figure 2" src="https://github.com/user-attachments/assets/a5b774d3-9448-4064-a88b-5024c7076f21" />
+<img width="1000" height="600" alt="Average Jump and Boost TIming By Skillshot Figure 3" src="https://github.com/user-attachments/assets/4b659d14-8354-42ce-9f78-8e8ed640c7e2" />
+
+
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
 ## Actions that need to be completed:
