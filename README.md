@@ -54,3 +54,8 @@ Just have the title as a placeholder to be populated later
 ## References / Source files:
 * Rocket League Action Sequence Dataset (Course-provided dataset source).
 * Python documentation for Pandas, NumPy, and Matplotlib.
+
+
+
+<img width="1745" height="820" alt="Screenshot 2026-11-03 133633" src="https://github.com/user-attachments/assets/c0ad0142-fc18-449a-9d9c-a23a5ea9aafd" />
+
