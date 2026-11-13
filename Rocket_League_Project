@@ -4,6 +4,7 @@
 import numpy as np
 from scipy.stats import norm, chisquare
 from scipy.stats import ttest_rel
+from scipy.stats import chi2_contingency
 import matplotlib.pyplot as plt
 import pandas as pd
 from scipy.stats import t
@@ -58,3 +59,24 @@ def shotType(dataframe):
 data = dataName("RL_data")
 load = load_Data(data)
 print(load)
+
+
+## Question 2: Do certain player action sequences repeat consistently across
+##different players performing the same trick, or is there high variance
+## in individual playstyles?
+
+actions = ["jump", "boost", "slide"]
+rows = []
+
+for _, group in load.groupby("SequenceNumber"):
+    first = {
+        action: group.loc[group[action] > 0, "Time"].min()
+        for action in actions if (group[action] > 0).any()
+    }
+    sequence = " > ".join(sorted(first, key=first.get)) or "None"
+    rows.append((group["SequenceLabel"].iloc[0], sequence))
+
+table = pd.crosstab([row[0] for row in rows], [row[1] for row in rows])
+chi2, p, _, _ = chi2_contingency(table)
+print(table)
+print(f"Chi-square p-value: {p:.4f}")
