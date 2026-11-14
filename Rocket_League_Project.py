@@ -1,26 +1,11 @@
-"" 
+from pathlib import Path
 
-""
-import numpy as np
-from scipy.stats import norm, chisquare
-from scipy.stats import ttest_rel
-import matplotlib.pyplot as plt
 import pandas as pd
-from scipy.stats import t
-
 
 ## Function for finding the filepath of the csv
 def dataName(file):
-    ## Find & open all_participant_data_rsi.csv file
-    # database name
-    database_name = file
-    # path to drop-jump folder
-    path_to_folder = "data/"
-
-    # select a signal file to run
-    signal_filepath = path_to_folder + database_name + ".csv"
-
-    return signal_filepath
+    ## Find the CSV file in the project's data folder
+    return Path(__file__).resolve().parent / "data" / f"{file}.csv"
 
 
 ## Loads data from a given datapath into a pandas matrix
@@ -30,12 +15,8 @@ def load_Data(path):
     :return: DataFrame with one row per sample
     """
 
-    # Data from the csv file is turned into a pandas matrix
-    data = open(path)
-    dataframe = pd.read_csv(data)
-    data.close()
-
-    return dataframe
+    ## Read the CSV file into a pandas DataFrame
+    return pd.read_csv(path)
 
 ## Types of shots made in the game
 def shotType(dataframe):
@@ -55,9 +36,7 @@ def shotType(dataframe):
 
     return frame_Noise, frame_Ceiling, frame_Power, frame_Wave, frame_Dribble, frame_Fflick, frame_Mflick
 ##
-data = dataName("RL_data")
-load = load_Data(data)
-print(load)
-
-
-
+if __name__ == "__main__":
+    data = dataName("RL_data")
+    load = load_Data(data)
+    print(load)
