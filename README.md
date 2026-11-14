@@ -54,7 +54,8 @@ Figure 2. Box plot of boost timing for each type of skill shot.
 Figure 3. Bar chart of average jump and boost timing for each type of skill shot.
 
 Graph overview:
-From this data, we found that generally the jump timing and boost timing for each of our skill shots were relatively the same, with similar lower and upper quartile ranges and means. Additionally, we noticed that the jump timing for shots such as the Musty Flick and Power Shot had many outliers, unlike the other shots. This may be due to how these shots allow for greater variation in inputs compared to the rest of the shots. However, for boost timings, there were no significant outliers in our data to note. Overall, other than a couple of outliers, we found that there was no statistically significant difference in jump timing between shots. 
+
+From this data, we found that generally the jump timing and boost timing for each of our skill shots were relatively the same, with similar lower and upper quartile ranges and means. Additionally, we noticed that the jump timing for shots such as the Musty Flick and Power Shot had many outliers, unlike the other shots. This may be due to how these shots allow for greater variation in inputs compared to the rest of the shots. However, for boost timings, there were no significant outliers in our data to note. Overall, other than a couple of outliers, we found that there was no discernible difference in jump timing between shots. 
 
 However, looking at the averages, we noticed that there were notable differences for shot types between jump and boost timings. This may be caused by the outliers in our data; shots such as the Musty Flick and Power Shots had a lot more outliers than the rest when it came to jump timing. Notable data points were the boost timing of the Ceiling shot, which had an average of 0.784 seconds, and Wave Dash, which had a jump time of 0.812 seconds. 
 
