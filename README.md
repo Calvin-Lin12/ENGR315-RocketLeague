@@ -42,7 +42,7 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Markers: Distinguish successful and failed attempts after clustering.
 ## Results (Answers to the Questions): (sub-task-6)
 
-For question 1, the code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
+For question 1, the  Python code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
 
 <img width="1000" height="600" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
 Figure 1. Box plot of jump timing for each type of skill shot.
@@ -58,6 +58,9 @@ Graph overview:
 From this data, we found that generally the jump timing and boost timing for each of our skill shots were relatively the same, with similar lower and upper quartile ranges and means. Additionally, we noticed that the jump timing for shots such as the Musty Flick and Power Shot had many outliers, unlike the other shots. This may be due to how these shots allow for greater variation in inputs compared to the rest of the shots. However, for boost timings, there were no significant outliers in our data to note. Overall, other than a couple of outliers, we found that there was no discernible difference in jump timing between shots. 
 
 However, looking at the averages, we noticed that there were notable differences for shot types between jump and boost timings. This may be caused by the outliers in our data; shots such as the Musty Flick and Power Shots had a lot more outliers than the rest when it came to jump timing. Notable data points were the boost timing of the Ceiling shot, which had an average of 0.784 seconds, and Wave Dash, which had a jump time of 0.812 seconds. 
+
+For question 2:
+WIP
 
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
