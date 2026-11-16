@@ -43,13 +43,13 @@ Rocket League is a video game where the user controls a car across a variety of 
 
 For question 1, the  Python code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
 
-<img width="1000" height="600" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
+<img width="500" height="300" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
 Figure 1. Box plot of jump timing for each type of skill shot.
 
-<img width="1000" height="600" alt="Boost Time By Skillshot Figure 2" src="https://github.com/user-attachments/assets/a5b774d3-9448-4064-a88b-5024c7076f21" />
+<img width="500" height="300" alt="Boost Time By Skillshot Figure 2" src="https://github.com/user-attachments/assets/a5b774d3-9448-4064-a88b-5024c7076f21" />
 Figure 2. Box plot of boost timing for each type of skill shot.
 
-<img width="1000" height="600" alt="Average Jump and Boost Timing by Skillshot Figure 3" src="https://github.com/user-attachments/assets/4b659d14-8354-42ce-9f78-8e8ed640c7e2" />
+<img width="500" height="300" alt="Average Jump and Boost Timing by Skillshot Figure 3" src="https://github.com/user-attachments/assets/4b659d14-8354-42ce-9f78-8e8ed640c7e2" />
 Figure 3. Bar chart of average jump and boost timing for each type of skill shot.
 
 Graph overview:
@@ -60,15 +60,24 @@ However, looking at the averages, we noticed that there were notable differences
 
 For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none was below 1.
 
-<img width="1000" height="600" alt="Action Sequences for Air Dribble Figure 1" src="https://github.com/user-attachments/assets/ebe20e7e-de4c-434e-891c-a2158276d26a" />
-<img width="1000" height="600" alt="Action Sequences for Ceiling Shots Figure 2" src="https://github.com/user-attachments/assets/9f7fe59e-7f31-4878-9d18-4e82d3615528" />
-<img width="1000" height="600" alt="Action Sequences for Front Flick Figure 3" src="https://github.com/user-attachments/assets/5a56cbfa-953c-490c-8e30-5860247579df" />
-<img width="1000" height="600" alt="Action Sequences for Musty Flick Figure 4" src="https://github.com/user-attachments/assets/7b3bbf6a-67c1-4b5b-a94f-1ef2f8f80b03" />
-<img width="1000" height="600" alt="Action Sequences for Power Shot Figure 5" src="https://github.com/user-attachments/assets/859f6b06-d963-4529-a505-23ec097fae5f" />
-<img width="1000" height="600" alt="Action Sequences for Wave Dash Figure 6" src="https://github.com/user-attachments/assets/2aefd802-e8b5-4ec4-aec2-777d6633664d" />
+Figures 4–9 show the action-sequence percentages for each skillshot. Each pair of charts is placed side by side to make them easier to compare.
 
+<table>
+  <tr>
+    <td><img width="450" alt="Action sequences for Air Dribble" src="https://github.com/user-attachments/assets/ebe20e7e-de4c-434e-891c-a2158276d26a" /><br>Figure 4. Action sequences for Air Dribble.</td>
+    <td><img width="450" alt="Action sequences for Ceiling Shot" src="https://github.com/user-attachments/assets/9f7fe59e-7f31-4878-9d18-4e82d3615528" /><br>Figure 5. Action sequences for Ceiling Shot.</td>
+  </tr>
+  <tr>
+    <td><img width="450" alt="Action sequences for Front Flick" src="https://github.com/user-attachments/assets/5a56cbfa-953c-490c-8e30-5860247579df" /><br>Figure 6. Action sequences for Front Flick.</td>
+    <td><img width="450" alt="Action sequences for Musty Flick" src="https://github.com/user-attachments/assets/7b3bbf6a-67c1-4b5b-a94f-1ef2f8f80b03" /><br>Figure 7. Action sequences for Musty Flick.</td>
+  </tr>
+  <tr>
+    <td><img width="450" alt="Action sequences for Power Shot" src="https://github.com/user-attachments/assets/859f6b06-d963-4529-a505-23ec097fae5f" /><br>Figure 8. Action sequences for Power Shot.</td>
+    <td><img width="450" alt="Action sequences for Wave Dash" src="https://github.com/user-attachments/assets/2aefd802-e8b5-4ec4-aec2-777d6633664d" /><br>Figure 9. Action sequences for Wave Dash.</td>
+  </tr>
+</table>
 
-Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the "other" group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. The conclusion depends on the assumption that every sequence is a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
+As shown in Figures 4–9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the "other" group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion depends on the assumption that every sequence is a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
