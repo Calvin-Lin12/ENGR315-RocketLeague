@@ -103,75 +103,6 @@ def plot_timings(attempts):
         plt.close()
 
 
-# Test how accurately jump and boost timings predict skillshots
-def test_prediction_accuracy(attempts):
-
-    rng = np.random.default_rng(42)
-
-    train_indices = []
-    test_indices = []
-
-    # Separate attempts into training and testing groups
-    for skillshot, group in attempts.groupby("Skillshot"):
-
-        indices = group.index.to_numpy().copy()
-        rng.shuffle(indices)
-
-        if len(indices) < 2:
-            train_indices.extend(indices)
-            continue
-
-        n_test = min(max(1, round(0.20 * len(indices))),
-                     len(indices) - 1)
-
-        test_indices.extend(indices[:n_test])
-        train_indices.extend(indices[n_test:])
-
-
-    if not test_indices:
-        print("Not enough data to test accuracy.")
-        return
-
-    train = attempts.loc[train_indices]
-    test = attempts.loc[test_indices]
-
-
-    # Select the jump and boost timing columns
-    columns = ["JumpTime", "BoostTime"]
-
-    x_train = train[columns].fillna(-1).to_numpy()
-    x_test = test[columns].fillna(-1).to_numpy()
-    y_train = train["Skillshot"].to_numpy()
-    y_test = test["Skillshot"].to_numpy()
-
-    # Calculate Distances between timing measurements
-    scale = x_train.std(axis=0)
-    scale[scale == 0] = 1
-
-    predictions = []
-
-    for trial in x_test:
-
-        distances = np.sum(((x_train - trial) / scale) ** 2,
-                           axis=1)
-
-        closest = np.argmin(distances)
-
-        predictions.append(y_train[closest])
-
-    # Calculate prediction accuracy
-    accuracy = 100 * np.mean(
-        np.array(predictions) == y_test
-    )
-
-    # Compare against predicting the most common skillshot
-    most_common = train["Skillshot"].mode().iloc[0]
-    baseline = 100 * np.mean(y_test == most_common)
-
-    print(f"Prediction accuracy: {accuracy:.1f}%")
-    print(f"Baseline accuracy: {baseline:.1f}%")
-    print(f"Number of test attempts: {len(test)}")
-
 # Load the Rocket League dataset
 def load_data():
 
@@ -235,8 +166,7 @@ def main():
     plot_timings(attempts)
     plot_average_timings(attempts)
 
-    # Test prediction accuracy
-    test_prediction_accuracy(attempts)
+
 
 if __name__ == "__main__":
     main()
