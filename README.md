@@ -60,6 +60,14 @@ However, looking at the averages, we noticed that there were notable differences
 
 For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none was below 1.
 
+<img width="1000" height="600" alt="Action Sequences for Air Dribble Figure 1" src="https://github.com/user-attachments/assets/ebe20e7e-de4c-434e-891c-a2158276d26a" />
+<img width="1000" height="600" alt="Action Sequences for Ceiling Shots Figure 2" src="https://github.com/user-attachments/assets/9f7fe59e-7f31-4878-9d18-4e82d3615528" />
+<img width="1000" height="600" alt="Action Sequences for Front Flick Figure 3" src="https://github.com/user-attachments/assets/5a56cbfa-953c-490c-8e30-5860247579df" />
+<img width="1000" height="600" alt="Action Sequences for Musty Flick Figure 4" src="https://github.com/user-attachments/assets/7b3bbf6a-67c1-4b5b-a94f-1ef2f8f80b03" />
+<img width="1000" height="600" alt="Action Sequences for Power Shot Figure 5" src="https://github.com/user-attachments/assets/859f6b06-d963-4529-a505-23ec097fae5f" />
+<img width="1000" height="600" alt="Action Sequences for Wave Dash Figure 6" src="https://github.com/user-attachments/assets/2aefd802-e8b5-4ec4-aec2-777d6633664d" />
+
+
 Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the "other" group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. The conclusion depends on the assumption that every sequence is a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
 ## Conclusions: (sub-task-7)
