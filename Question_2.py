@@ -6,7 +6,6 @@ from Rocket_League_Project import dataName, load_Data
 
 ## Names of Skillshots
 SHOT_NAMES = {
-    -1: "Noise",
     1: "Ceiling Shot",
     2: "Power Shot",
     3: "Wave Dash",
@@ -65,12 +64,36 @@ def build_sequence_table(attempts):
     return table
 
 
-## Testing whether action sequence counts differ by skillshot
+## Group attempts by the relative order of jump and boost
+def build_action_order_table(attempts):
+
+    def action_order(sequence):
+        actions = sequence.split(" > ")
+
+        if "jump" in actions and "boost" in actions:
+            if actions.index("jump") < actions.index("boost"):
+                return "Jump before boost"
+
+            return "Boost before jump"
+
+        return "Other"
+
+    grouped = attempts.copy()
+    grouped["ActionOrder"] = grouped["ActionSequence"].map(action_order)
+
+    return pd.crosstab(
+        grouped["Skillshot"],
+        grouped["ActionOrder"],
+    ).reindex(
+        columns=["Jump before boost", "Boost before jump", "Other"],
+        fill_value=0,
+    )
+
+
+## Testing whether action order and skillshot are associated
 def test_action_sequences(table):
 
-    _, p_value, _, _ = chi2_contingency(table)
-
-    return p_value
+    return chi2_contingency(table)
 
 
 ## Creating a bar graph showing action sequence percentages for each skillshot
@@ -109,15 +132,32 @@ def main():
         print("No valid skillshot attempts were found.")
         return
 
-    table = build_sequence_table(attempts)
-    p_value = test_action_sequences(table)
+    sequence_table = build_sequence_table(attempts)
+    order_table = build_action_order_table(attempts)
+    chi2_statistic, p_value, degrees_of_freedom, expected = (
+        test_action_sequences(order_table)
+    )
+    sample_size = int(order_table.to_numpy().sum())
+    cramers_v = (
+        chi2_statistic
+        / (sample_size * min(order_table.shape[0] - 1, order_table.shape[1] - 1))
+    ) ** 0.5
 
-    print("Action Sequence Counts by Skillshot:")
-    print(table)
-    print(f"Chi-square p-value: {p_value:.2e}")
+    print("Action-order Counts by Skillshot:")
+    print(order_table)
+    print(
+        f"Chi-square test: X^2({degrees_of_freedom}) = "
+        f"{chi2_statistic:.2f}, p = {p_value:.2e}"
+    )
+    print(f"Cramer's V: {cramers_v:.3f}")
+    print(
+        f"Expected counts below 5: {(expected < 5).sum()} of "
+        f"{expected.size}; below 1: {(expected < 1).sum()}"
+    )
 
-    table.to_csv(OUTPUT_DIR / "action_sequence_counts.csv")
-    plot_action_sequences(table)
+    sequence_table.to_csv(OUTPUT_DIR / "action_sequence_counts.csv")
+    order_table.to_csv(OUTPUT_DIR / "action_order_chi_square_counts.csv")
+    plot_action_sequences(sequence_table)
 
 
 if __name__ == "__main__":

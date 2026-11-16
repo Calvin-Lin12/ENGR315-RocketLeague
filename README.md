@@ -14,7 +14,7 @@
 1. **Can player input timings (jump/boost) accurately predict which specific skillshot is being performed?**
    * *Expected Answer / Analysis:* We expect to analyze the jump and boost timings associated with each skillshot category to identify distinct input patterns. We can compare the mean, median, maximum, and minimum input timings for each category to determine whether these patterns can help predict which skillshot is being performed.
 2. **Do certain player action sequences repeat consistently across different players performing the same trick, or is there high variance in individual playstyles?**
-   * *Expected Answer / Analysis:* We expect to compare the sequences of player actions (jump, boost, dodge, etc.) across different players performing the same skillshot. We will place these sequences in bins and perform a chi-square shot to see if the results are statistically significant.
+   * *Expected Answer / Analysis:* Compare action-sequence bins across skillshots with a chi-square test of independence. Player-level conclusions require player identifiers in the dataset.
 3. **How effectively can we cluster unlabelled failed attempts away from successful trick categories based solely on movement and ball metric features?**
    * *Expected Answer / Analysis:* We plan to use a clustering sort of K-means, which will be based on player movement and ball metrics, including ball velocity, player velocity, acceleration, etc. We will examine whether failed attempts form distinct clusters from successful skillshot categories. Then use silhouette scores and compare the resulting clusters against the known success/failure categories to see if there's a significant difference between the shots.
 ## Introduction/Context of project: 
@@ -29,11 +29,10 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Y-axis: Input timing (seconds).
   * Separate graphs: One for jump timing and one for boost timing, etc.
  
-* For Q2. Histogram
-  * X-axis: Action sequence (Jump → Boost, Jump → Dodge, Jump → Boost → Dodge, etc.).
-  * Y-axis: Frequency of occurrence.
-  * Bar colors/label: Different players or skillshot categories.
-  * Chi-square test: observed graph vs. expected counts graph
+* For Q2. Action-sequence bar charts
+  * X-axis: Action sequence (Jump → Boost, Jump → Slide, etc.).
+  * Y-axis: Percentage of attempts for each skillshot.
+  * Chi-square test of independence compares skillshot with jump/boost order (jump first, boost first, or other).
 
 * For Q3. Scatter plot
   * X-axis: First principal component (variable with the most difference in dataset).
@@ -59,8 +58,9 @@ From this data, we found that generally the jump timing and boost timing for eac
 
 However, looking at the averages, we noticed that there were notable differences for shot types between jump and boost timings. This may be caused by the outliers in our data; shots such as the Musty Flick and Power Shots had a lot more outliers than the rest when it came to jump timing. Notable data points were the boost timing of the Ceiling shot, which had an average of 0.784 seconds, and Wave Dash, which had a jump time of 0.812 seconds. 
 
-For question 2:
-WIP
+For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none was below 1.
+
+Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the "other" group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. The conclusion depends on the assumption that every sequence is a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
