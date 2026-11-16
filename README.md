@@ -85,6 +85,12 @@ Figures 4-9 show the action-sequence percentages for each skillshot.
 
 As shown in Figures 4-9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the other group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion depends on the assumption that every sequence is a different player, the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
+---
+
+### Question 3: Speed Time-Series Analysis
+
+...
+
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
 ## Actions that need to be completed:
