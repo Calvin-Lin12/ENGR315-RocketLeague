@@ -44,12 +44,15 @@ Rocket League is a video game where the user controls a car across a variety of 
 For question 1, the  Python code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
 
 <img width="500" height="300" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
+
 Figure 1. Box plot of jump timing for each type of skill shot.
 
 <img width="500" height="300" alt="Boost Time By Skillshot Figure 2" src="https://github.com/user-attachments/assets/a5b774d3-9448-4064-a88b-5024c7076f21" />
+
 Figure 2. Box plot of boost timing for each type of skill shot.
 
 <img width="500" height="300" alt="Average Jump and Boost Timing by Skillshot Figure 3" src="https://github.com/user-attachments/assets/4b659d14-8354-42ce-9f78-8e8ed640c7e2" />
+
 Figure 3. Bar chart of average jump and boost timing for each type of skill shot.
 
 Graph overview:
