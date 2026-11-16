@@ -40,7 +40,7 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Colors: Different K-means clusters.
   * Markers: Distinguish successful and failed attempts after clustering.
 ## Results (Answers to the Questions): (sub-task-6)
-
+### Question 1: Jump and Boost Timing
 For question 1, the  Python code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
 
 <img width="500" height="300" alt="Jump Time By Skillshot Figure 1" src="https://github.com/user-attachments/assets/9ca8dac4-84d3-4c86-9587-0d97aaa89ace" />
@@ -61,9 +61,12 @@ From this data, we found that generally the jump timing and boost timing for eac
 
 However, looking at the averages, we noticed that there were notable differences for shot types between jump and boost timings. This may be caused by the outliers in our data; shots such as the Musty Flick and Power Shots had a lot more outliers than the rest when it came to jump timing. Notable data points were the boost timing of the Ceiling shot, which had an average of 0.784 seconds, and Wave Dash, which had a jump time of 0.812 seconds. 
 
+---
+
+### Question 2: Action-Order Sequences
 For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none was below 1.
 
-Figures 4–9 show the action-sequence percentages for each skillshot. Each pair of charts is placed side by side to make them easier to compare.
+Figures 4-9 show the action-sequence percentages for each skillshot.
 
 <table>
   <tr>
@@ -80,7 +83,7 @@ Figures 4–9 show the action-sequence percentages for each skillshot. Each pair
   </tr>
 </table>
 
-As shown in Figures 4–9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the "other" group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion depends on the assumption that every sequence is a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
+As shown in Figures 4-9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the other group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion depends on the assumption that every sequence is a different player, the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
