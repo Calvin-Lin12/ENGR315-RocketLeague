@@ -15,8 +15,8 @@
    * *Expected Answer / Analysis:* We expect to analyze the jump and boost timings associated with each skillshot category to identify distinct input patterns. We can compare the mean, median, maximum, and minimum input timings for each category to determine whether these patterns can help predict which skillshot is being performed.
 2. **Do certain player action sequences repeat consistently across different players performing the same trick, or is there high variance in individual playstyles?**
    * *Expected Answer / Analysis:* Compare action-sequence bins across skillshots with a chi-square test of independence. Player-level conclusions require player identifiers in the dataset.
-3. **How effectively can we cluster unlabelled failed attempts away from successful trick categories based solely on movement and ball metric features?**
-   * *Expected Answer / Analysis:* We plan to use a clustering sort of K-means, which will be based on player movement and ball metrics, including ball velocity, player velocity, acceleration, etc. We will examine whether failed attempts form distinct clusters from successful skillshot categories. Then use silhouette scores and compare the resulting clusters against the known success/failure categories to see if there's a significant difference between the shots.
+3. **How effectively can multivariate linear regression use player movement and ball metrics to predict the success of a Rocket League shot, and which variables have the greatest influence on the predicted outcome?**
+   * *Expected Answer / Analysis:* We plan to use multivariate linear regression to determine how player movement and ball metrics relate to shot success or failure. Then, analyze the regression coefficients to identify which variables have the strongest positive or negative relationships with a successful shot. We will also evaluate the model using \(R^2\) to determine how much variation in shot outcomes can be explained by the selected gameplay features.
 ## Introduction/Context of project: 
 Rocket League is a video game where the user controls a car across a variety of game modes. Most Rocket League game modes are similar to soccer, where competing teams try to score on the opponent's net. Since the game was released in 2015, players have developed a variety of popular in-game mechanics. We will be looking at the inputs players make when attempting these mechanics to answer our questions.
 ## Implementation Details: (sub-task-3 and sub-task-4)
@@ -34,11 +34,10 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Y-axis: Percentage of attempts for each skillshot.
   * Chi-square test of independence compares skillshot with jump/boost order (jump first, boost first, or other).
 
-* For Q3. Scatter plot
-  * X-axis: First principal component (variable with the most difference in dataset).
-  * Y-axis: Second principal component (second most difference in dataset).
-  * Colors: Different K-means clusters.
-  * Markers: Distinguish successful and failed attempts after clustering.
+* Q3. Regression Coefficient Plot
+  * X-axis: Standardized regression coefficients.
+  * Y-axis: Gameplay variables (ball speed, player speed, acceleration, distance to ball, etc.).
+  * Bars: Show the strength and direction of each variable's relationship with shot success.
 ## Results (Answers to the Questions): (sub-task-6)
 ### Question 1: Jump and Boost Timing
 For question 1, the  Python code aims to determine whether the timing of jump and boost inputs can help us differentiate between different types of Rocket League skillshots. To do this, we categorized our data into the six skillshot types listed in the research: Air Dribble, Ceiling Shot, Front Flick, Musty Flick, Power Shot, and Wave Dash. Based on this data, we were able to calculate the mean, median, maximum, and minimum, then use those values to predict whether a certain data point fit into one of our shot categories. With those predictions, we were able to get the accuracy by comparing the predicted category to the actual skillshot type. 
