@@ -34,7 +34,7 @@ Rocket League is a video game where the user controls a car across a variety of 
   * Y-axis: Percentage of attempts for each skillshot.
   * Chi-square test of independence compares skillshot with jump/boost order (jump first, boost first, or other).
 
-* Q3. Regression Coefficient Plot
+* Q3. Regression Coefficient bar chart
   * X-axis: Standardized regression coefficients.
   * Y-axis: Gameplay variables (ball speed, player speed, acceleration, distance to ball, etc.).
   * Bars: Show the strength and direction of each variable's relationship with shot success.
