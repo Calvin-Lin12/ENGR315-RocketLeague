@@ -95,8 +95,9 @@ Prediction Accuracy: 88.93 %
 
 - **Positive coefficient:** Associated with a higher predicted outcome (success).
 - **Negative coefficient:** Associated with a lower predicted outcome (success).
-
-TABLE 1: Table of regression coefficients for each gameplay variable.
+  
+<table>
+** TABLE 1:** Table of regression coefficients for each gameplay variable.
 | Gameplay Variable | Regression Coefficient |
 |---|---:|
 | Up | +0.1932 |
@@ -117,14 +118,17 @@ TABLE 1: Table of regression coefficients for each gameplay variable.
 | Slide | -0.0379 |
 | Down | -0.0426 |
 | Distance to Wall | -0.0725 |
+<table>
 
-**Table 2.** Comparison of actual outcomes and regression predictions.
+<table>
+**TABLE 2:** Comparison of actual outcomes and regression predictions.
 
 | Actual Outcome | Predicted Failed (0) | Predicted Successful (1) | Total |
 |---|---:|---:|---:|
 | Failed (0) | 11 | 32 | 43 |
 | Successful (1) | 1 | 254 | 255 |
 | **Total** | **12** | **286** | **298** |
+<table>
 
 <table>
 <img width="1000" height="700" alt="8174bd61-d169-4508-a2a1-725fa40e28cf" src="https://github.com/user-attachments/assets/d86bd5e2-52e3-400a-9d1a-f71b17ab03d5" />
