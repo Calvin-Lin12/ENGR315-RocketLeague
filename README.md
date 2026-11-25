@@ -126,10 +126,10 @@ TABLE 1: Table of regression coefficients for each gameplay variable.
 | Successful (1) | 1 | 254 | 255 |
 | **Total** | **12** | **286** | **298** |
 
-
+<table>
 <img width="1000" height="700" alt="8174bd61-d169-4508-a2a1-725fa40e28cf" src="https://github.com/user-attachments/assets/d86bd5e2-52e3-400a-9d1a-f71b17ab03d5" />
 Figure 10. Graph of regression coefficients for each gameplay variable.
-
+<table>
 
 From the data, we found that factors `Up` and `Slow` have the strongest positive coefficients, suggesting that these variables are associated with higher predicted success. `Distance to Wall` has the strongest negative coefficient, suggesting that increasing distance from the wall is associated with lower predicted success. However, these relationships indicate correlation, not necessarily cause-and-effect relationships. Additionally, even though the prediction accuracy was 88.93%, our R-squared was 0.2952. Since the R-squared value was low, it suggests that the high accuracy may be due to there being more successful shots in the original dataset than unsuccessful ones, leading to better prediction of successful attempts than failed ones. 
   
