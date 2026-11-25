@@ -63,7 +63,7 @@ However, looking at the averages, we noticed that there were notable differences
 ---
 
 ### Question 2: Action-Order Sequences
-For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none was below 1.
+For question 2, the dataset has 255 attempts across six skillshots, but it does not say which player made each attempt. We therefore cannot confirm whether each sequence came from a different player. If we assume each sequence represents a different player, we can compare their action orders by skillshot. We grouped sequences by whether jump came before boost, boost came before jump, or the attempt did not include both actions. A chi-square test showed that the action-order patterns differed across skillshots: X²(10) = 67.91, p = 1.12 × 10⁻¹⁰, with Cramér's V = 0.365. Three of the 18 expected counts were below 5 (16.7%), and none were below 1.
 
 Figures 4-9 show the action-sequence percentages for each skillshot.
 
@@ -82,19 +82,50 @@ Figures 4-9 show the action-sequence percentages for each skillshot.
   </tr>
 </table>
 
-As shown in Figures 4-9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the other group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion depends on the assumption that every sequence is a different player, the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
+As shown in Figures 4-9, the action order differed by trick. Assuming each sequence came from a different player, boost came before jump in 75.6% of Air Dribble attempts. Jump came first in 63.3% of Ceiling Shots, 58.7% of Front Flicks, 52.8% of Musty Flicks, and 65.0% of Power Shots. Wave Dash attempts were more spread across the groups, with 39.5% in the other group. This suggests that players often use a similar broad action order for some tricks, while the most common order depends on the trick. This conclusion assumes each sequence comes from a different player; the dataset does not confirm this. The chi-square result shows differences across tricks, but does not by itself measure how much players' individual styles vary.
 
 ---
 
-### Question 3: Speed Time-Series Analysis
+### Question 3: Multivariate Linear Regression 
+Question 3 looks at all 298 attempts for the seven categories in the data. The data was organized and grouped by SequenceLabel; a value of 0 meant the data was "noise" (the shot failed), and labels 1-7 were relabeled as successful shots and given a value of 1. The predictions were made by utilizing the regression coefficient of least squares. The values >= 0.5 were considered successful shots and values that were below that were predicted to be failed. 
 
+- **Positive coefficient:** Associated with a higher predicted outcome (success).
+- **Negative coefficient:** Associated with a lower predicted outcome (success).
+
+| Gameplay Variable | Regression Coefficient |
+|---|---:|
+| Up | +0.1932 |
+| Slow | +0.1757 |
+| Jump | +0.0829 |
+| Time | +0.0587 |
+| Ball Acceleration | +0.0564 |
+| Ball Speed | +0.0561 |
+| Right | +0.0276 |
+| Accelerate | +0.0210 |
+| Left | +0.0151 |
+| Goal | +0.0145 |
+| Distance to Ball | +0.0122 |
+| Distance to Ceiling | +0.0118 |
+| Camera | -0.0057 |
+| Player Speed | -0.0114 |
+| Boost | -0.0331 |
+| Slide | -0.0379 |
+| Down | -0.0426 |
+| Distance to Wall | -0.0725 |
+
+<img width="1000" height="700" alt="8174bd61-d169-4508-a2a1-725fa40e28cf" src="https://github.com/user-attachments/assets/d86bd5e2-52e3-400a-9d1a-f71b17ab03d5" />
+
+- `Up` and `Slow` have the strongest positive coefficients, suggesting that these variables are associated with higher predicted success.
+- `Distance to Wall` has the strongest negative coefficient, suggesting that increasing distance from the wall is associated with lower predicted success.
+- These relationships indicate associations, not necessarily cause-and-effect relationships.
+  
 ...
 
 ## Conclusions: (sub-task-7)
 Just have the title as a placeholder to be populated later
 ## Actions that need to be completed:
 * [ ] Clean and preprocess the raw Rocket League CSV dataset.
-* [ ] Write initial Python scripts to parse variables (`BallSpeed`, `PlayerSpeed`, `sequencelabel`).
+* [ ] Write initial Python scripts to parse variables (`BallSpeed`, `PlayerSpeed`, `SequenceLabel`).
 * [ ] Generate statistical distribution plots for Question 1.
 * [ ] Perform chi-square contingency analysis for Question 2 speed categories.
 * [ ] Implement time-series plotting scripts for Question 3.
