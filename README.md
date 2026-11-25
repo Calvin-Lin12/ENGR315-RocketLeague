@@ -97,7 +97,7 @@ Prediction Accuracy: 88.93 %
 - **Negative coefficient:** Associated with a lower predicted outcome (success).
   
 
-** TABLE 1:** Table of regression coefficients for each gameplay variable.
+**TABLE 1:** Table of regression coefficients for each gameplay variable.
 | Gameplay Variable | Regression Coefficient |
 |---|---:|
 | Up | +0.1932 |
