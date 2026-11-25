@@ -92,6 +92,7 @@ Question 3 looks at all 298 attempts for the seven categories in the data. The d
 - **Positive coefficient:** Associated with a higher predicted outcome (success).
 - **Negative coefficient:** Associated with a lower predicted outcome (success).
 
+TABLE 1: Table of regression coefficients for each gameplay variable.
 | Gameplay Variable | Regression Coefficient |
 |---|---:|
 | Up | +0.1932 |
@@ -114,6 +115,7 @@ Question 3 looks at all 298 attempts for the seven categories in the data. The d
 | Distance to Wall | -0.0725 |
 
 <img width="1000" height="700" alt="8174bd61-d169-4508-a2a1-725fa40e28cf" src="https://github.com/user-attachments/assets/d86bd5e2-52e3-400a-9d1a-f71b17ab03d5" />
+Figure 10. Graph of regression coefficients for each gameplay variable.
 
 - `Up` and `Slow` have the strongest positive coefficients, suggesting that these variables are associated with higher predicted success.
 - `Distance to Wall` has the strongest negative coefficient, suggesting that increasing distance from the wall is associated with lower predicted success.
